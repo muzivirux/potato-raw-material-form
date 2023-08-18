@@ -1,429 +1,540 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Potato Raw Material Form</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="icon" href="./images/favicon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="icon" href="./images/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
 
-<body>
+  <body>
     <!-- Logo -->
     <div class="logo">
-        <a href="https://rafiqfarmfoods.com/" target="_blank">
-            <img id="logoImg" src="./images/rff.png">
-        </a>
+      <a href="https://rafiqfarmfoods.com/" target="_blank">
+        <img id="logoImg" src="./images/rff.png" />
+      </a>
     </div>
 
     <!-- Form -->
     <h1>Potato Raw Material Form</h1>
     <div id="line"></div>
     <form id="PotatoRawMaterialForm">
-        <!-- Wapda -->
-       <div class="RSD">
+      <!-- Wapda -->
+      <div class="RSD">
         <div class="wrapper">
-        
-            <label for="RSD">Date</label>
-            <input type="date" required id="wapdapeak1"
-                name="PotatoRawMaterial Date" placeholder="Enter Date" >
+          <label for="RSD">Date</label>
+          <input
+            type="date"
+            required
+            id="wapdapeak1"
+            name="PotatoRawMaterial Date"
+            placeholder="Enter Date"
+          />
         </div>
-                     <div class="wrapper">
-                    <label for="RSD">Vehicle No</label>
-                    <input type="text"   id="vehicleNo"
-                        name="PotatoRawMaterial Vehicle No" required
-                        placeholder="Enter Vehicle No">
-                        </div>
-       </div>
+        <div class="wrapper">
+          <label for="RSD">Vehicle No</label>
+          <input
+            type="text"
+            id="vehicleNo"
+            name="PotatoRawMaterial Vehicle No"
+            required
+            placeholder="Enter Vehicle No"
+            oninput="formatVehicleNumber()"
+          />
+        </div>
+      </div>
 
-                            <div class="RSD">
-                            <div class="wrapper">
-                            
-                         <label for="RSD">Shift</label>  
-                    <input type="time"  id="wapdatotal"
-                        name="PotatoRawMaterial Shift" required placeholder="Enter Shift">
-                            </div>
-                            <div class="wrapper">
-                        <label class="RED">Potato Variety</label>
-                        <input type="text"   id="wapdatotal"
-                            name="PotatoRawMaterial Potato Variety" required placeholder="Enter Potato Variety">
-                           
-                </div>
-                            </div>
-                      <h2>Off Loading Time</h2>
-                        
-                      <div class="RSD">
-                        <div class="wrapper">
-                        
-                      
-                <label for="RSD" class="label">Start off loading time</label>
-                <!-- <div class="RED"> -->
-                    <input type="time"  id="wapdapeakend"
-                        name="PotatoRawMaterial Start off loading time of potatoes" required placeholder="HH:MM">
-                        </div>
-                        
-                      <div class="wrapper">
-                        <label for="RSD" class="label">End off loading time</label>
-                    <input type="time"  id="wapdaoffpeakend"
-                        name="PotatoRawMaterial End off loading time of potatoes" required
-                        placeholder="HH:MM">
-                </div>
-                      </div>
-                
-                      <div class="RSD">
-                        <div class="wrapper">
-                <label for="RSD" class="label">LIR Reference No.</label>
-                <!-- <div class="RED"> -->
-                    <input type="number" required min="0"  id="wapdapeakused"
-                        name="PotatoRawMaterial LIR Reference Number." required placeholder="Enter LIR Reference No.">
-                        </div>
+      <div class="RSD">
+        <div class="wrapper">
+          <label for="RSD">Shift</label>
+          <input
+            type="time"
+            id="wapdatotal"
+            name="PotatoRawMaterial Shift"
+            required
+            placeholder="Enter Shift"
+          />
+        </div>
+        <div class="wrapper">
+          <label class="RED">Potato Variety</label>
+          <input
+            type="text"
+            id="wapdatotal"
+            name="PotatoRawMaterial Potato Variety"
+            required
+            placeholder="Enter Potato Variety"
+          />
+        </div>
+      </div>
+      <h2>Off Loading Time</h2>
 
-                        <div class="wrapper">
-               
-                        <label for="RSD" class="label">Gate Pass No.</label>
-                    <input type="number" required min="0"  id="wapdaoffpeakused"
-                        name="PotatoRawMaterial Gate Pass Number" required placeholder="Enter Gate Pass No.">
-                    </div>
-                      </div>
-                        
-                       
-                      <div class="RSD">
-                        <div class="wrapper">
-                        <label for="RSD" class="label">No of bags</label>
-                    <input type="number" required min="0"  id="wapdapeakoffpeaktotalused"
-                        name="PotatoRawMaterial No of bags for potatoes" required placeholder="Enter No of bags">
-                </div>
-                
-                <div class="wrapper">
-                <label class="label">Gross weight(kg)</label>
-                <input type="number" id="availability-duration" name="PotatoRawMaterial Gross weight(kg) of Potatoes"
-                    placeholder="Enter Gross weight(kg)" min="0">
-                </div>
-                      </div>
+      <div class="RSD">
+        <div class="wrapper">
+          <label for="RSD" class="label">Start off loading time</label>
+          <!-- <div class="RED"> -->
+          <input
+            type="time"
+            id="wapdapeakend"
+            name="PotatoRawMaterial Start off loading time of potatoes"
+            required
+            placeholder="HH:MM"
+          />
+        </div>
 
-                      <div class="RSD">
-                        <div class="wrapper">  
-                        <label for="RSD">Grader under Size(kg)</label>
-                        <!-- <div class="RED"> -->
-                            <input type="number" id="gen1Units" name="PotatoRawMaterial Grader under Size Potatoes"
-                                placeholder="Enter Grader under Size" min="0" >
-                        </div>
-                                
-                        <div class="wrapper">
-                                <label for="RED">Recovered Potatoes(kg)</label>
-                            <input type="number" id="gen1diesel" name="PotatoRawMaterial Recovered Potatoes"
-                                required placeholder="Enter Recovered Potatoes" min="0" >
-                        </div>
-                        </div>
-                                  
-                        <div class="RSD">
-                            <div class="wrapper">
-                                <label for="RED">Actual under Size(kg)</label>
-                            <input type="number" id="gen1duration" name="PotatoRawMaterial Actual under Size potatoes"
-                                required placeholder="Enter Actual under Size" min="0" >
-                                
-                        </div>
-                        <div class="wrapper">
-                        <label for="RED">Soil(kg)</label>
-                        <!-- <div class="RED"> -->
-                            <input type="number" id="gen1Unitsend" name="PotatoRawMaterial Soil"
-                                required placeholder="Enter Soil(kg)" min="0"  step="0.1">
-                        </div>
-                      </div>
-                      
-                                
+        <div class="wrapper">
+          <label for="RSD" class="label">End off loading time</label>
+          <input
+            type="time"
+            id="wapdaoffpeakend"
+            name="PotatoRawMaterial End off loading time of potatoes"
+            required
+            placeholder="HH:MM"
+          />
+        </div>
+      </div>
 
-                                <h2>Wastage(kg)</h2>
-                                <div class="RSD">
-                                    <div class="wrapper">
-                                <label for="RSD">Fungus(kg)</label>
-                            <input type="number" id="gen1dieselend" name="PotatoRawMaterial Fungus"
-                                required placeholder="Enter Fungus" min="0" step="0.1" >
-                                    </div>
-                                
-                                    <div class="wrapper">
-                                <label for="RSD">Damage(kg)</label>
-                            <input type="number" id="gen1durationend" name="PotatoRawMaterial Damage"
-                                required placeholder="Enter Damage" min="0" step="0.1" >
-                                
-                        </div>
-                                </div>
+      <div class="RSD">
+        <div class="wrapper">
+          <label for="RSD" class="label">LIR Reference No.</label>
+          <!-- <div class="RED"> -->
+          <input
+            type="number"
+            required
+            min="0"
+            id="wapdapeakused"
+            name="PotatoRawMaterial LIR Reference Number."
+            required
+            placeholder="Enter LIR Reference No."
+          />
+        </div>
 
-                                <div class="RSD">
-                                    <div class="wrapper">
-                        <label for="RSD" class="label">Net Weight(kg)</label>
-                        <!-- <div class="RED"> -->
-                            <input type="number" required min="0" id="gen1unittotal"
-                                name="PotatoRawMaterial Net Weight" required placeholder="Enter Net Weight(kg)" step="0.1" 
-                                > 
-                        </div>
-                        <div class="wrapper">
-                                <label for="RSD" class="label">Sign or Sorting</label>  
-                            <input type="text"  id="gen1dieseltotal"
-                                name="PotatoRawMaterial Sign or Sorting" required
-                                placeholder="Sign or Sorting">
-                        </div>
-                                    </div>
-                           
+        <div class="wrapper">
+          <label for="RSD" class="label">Gate Pass No.</label>
+          <input
+            type="number"
+            required
+            min="0"
+            id="wapdaoffpeakused"
+            name="PotatoRawMaterial Gate Pass Number"
+            required
+            placeholder="Enter Gate Pass No."
+          />
+        </div>
+      </div>
 
-                                <input type="submit" value="Submit">
+      <div class="RSD">
+        <div class="wrapper">
+          <label for="RSD" class="label">No of bags</label>
+          <input
+            type="number"
+            required
+            min="0"
+            id="wapdapeakoffpeaktotalused"
+            name="PotatoRawMaterial No of bags for potatoes"
+            required
+            placeholder="Enter No of bags"
+          />
+        </div>
+
+        <div class="wrapper">
+          <label class="label">Gross weight(kg)</label>
+          <input
+            type="number"
+            id="availability-duration"
+            name="PotatoRawMaterial Gross weight(kg) of Potatoes"
+            placeholder="Enter Gross weight(kg)"
+            min="0"
+          />
+        </div>
+      </div>
+
+      <div class="RSD">
+        <div class="wrapper">
+          <label for="RSD">Grader under Size(kg)</label>
+          <!-- <div class="RED"> -->
+          <input
+            type="number"
+            id="gen1Units"
+            name="PotatoRawMaterial Grader under Size Potatoes"
+            placeholder="Enter Grader under Size"
+            min="0"
+          />
+        </div>
+
+        <div class="wrapper">
+          <label for="RED">Recovered Potatoes(kg)</label>
+          <input
+            type="number"
+            id="gen1diesel"
+            name="PotatoRawMaterial Recovered Potatoes"
+            required
+            placeholder="Enter Recovered Potatoes"
+            min="0"
+          />
+        </div>
+      </div>
+
+      <div class="RSD">
+        <div class="wrapper">
+          <label for="RED">Actual under Size(kg)</label>
+          <input
+            type="number"
+            id="gen1duration"
+            name="PotatoRawMaterial Actual under Size potatoes"
+            required
+            placeholder="Enter Actual under Size"
+            min="0"
+          />
+        </div>
+        <div class="wrapper">
+          <label for="RED">Soil(kg)</label>
+          <!-- <div class="RED"> -->
+          <input
+            type="number"
+            id="gen1Unitsend"
+            name="PotatoRawMaterial Soil"
+            required
+            placeholder="Enter Soil(kg)"
+            min="0"
+            step="0.1"
+          />
+        </div>
+      </div>
+
+      <h2>Wastage(kg)</h2>
+      <div class="RSD">
+        <div class="wrapper">
+          <label for="RSD">Fungus(kg)</label>
+          <input
+            type="number"
+            id="gen1dieselend"
+            name="PotatoRawMaterial Fungus"
+            required
+            placeholder="Enter Fungus"
+            min="0"
+            step="0.1"
+          />
+        </div>
+
+        <div class="wrapper">
+          <label for="RSD">Damage(kg)</label>
+          <input
+            type="number"
+            id="gen1durationend"
+            name="PotatoRawMaterial Damage"
+            required
+            placeholder="Enter Damage"
+            min="0"
+            step="0.1"
+          />
+        </div>
+      </div>
+
+      <div class="RSD">
+        <div class="wrapper">
+          <label for="RSD" class="label">Net Weight(kg)</label>
+          <!-- <div class="RED"> -->
+          <input
+            type="number"
+            required
+            min="0"
+            id="gen1unittotal"
+            name="PotatoRawMaterial Net Weight"
+            required
+            placeholder="Enter Net Weight(kg)"
+            step="0.1"
+          />
+        </div>
+        <div class="wrapper">
+          <label for="RSD" class="label">Sign or Sorting</label>
+          <input
+            type="text"
+            id="gen1dieseltotal"
+            name="PotatoRawMaterial Sign or Sorting"
+            required
+            placeholder="Sign or Sorting"
+          />
+        </div>
+      </div>
+
+      <input type="submit" value="Submit" />
     </form>
 
     <!-- spinner html -->
     <div class="spinner-container">
-        <div class="spinner"></div>
+      <div class="spinner"></div>
     </div>
     <!-- end of spinner html -->
 
     <!-- Add the modal HTML code -->
     <div id="myModal" class="modal">
-        <span class="close">&times;</span>
-        <div class="modal-content">
-            <p id="modal-message"></p>
-            <button id="closeBtn">Close</button>
-        </div>
+      <span class="close">&times;</span>
+      <div class="modal-content">
+        <p id="modal-message"></p>
+        <button id="closeBtn">Close</button>
+      </div>
     </div>
 
     <!-- Footer -->
     <footer class="footer">
-        <p><a href="https://rafiqfarmfoods.com/" target="_blank">Copyright &copy; Rafiq Farm Foods | All Right
-                Reserved. </a></p>
+      <p>
+        <a href="https://rafiqfarmfoods.com/" target="_blank"
+          >Copyright &copy; Rafiq Farm Foods | All Right Reserved.
+        </a>
+      </p>
     </footer>
     <!-- end of Footer -->
 
-
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwAe8avrenNTyJAKPT_vc1hss5NLCHg47vuAczXu0OKupiZYkze4Y8AlfO3Hvgximdx/exec';
-        const form = document.getElementById("PotatoRawMaterialForm");
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbwAe8avrenNTyJAKPT_vc1hss5NLCHg47vuAczXu0OKupiZYkze4Y8AlfO3Hvgximdx/exec";
+      const form = document.getElementById("PotatoRawMaterialForm");
 
-        // modal javascript
-        // Get the modal element, the close button, and the close button inside the modal
-        const modal = document.getElementById("myModal");
-        const closeBtn = document.querySelector(".close");
-        const modalCloseBtn = document.getElementById("closeBtn");
+      // modal javascript
+      // Get the modal element, the close button, and the close button inside the modal
+      const modal = document.getElementById("myModal");
+      const closeBtn = document.querySelector(".close");
+      const modalCloseBtn = document.getElementById("closeBtn");
 
-
-        form.addEventListener('submit', e => {
-            e.preventDefault();
-            modal.style.display = "block";
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                .then(response => {
-                    hideSpinner(); // Hide the spinner
-                    document.getElementById("modal-message").textContent = 'Success!';
-                })
-                .catch(error => {
-                    hideSpinner(); // Hide the spinner
-                    document.getElementById("modal-message").textContent = 'Error! ' + error.message;
-                });
-        });
-        // Close the modal when the close button is clicked
-        closeBtn.addEventListener("click", () => {
-            modal.style.display = "none";
-        });
-        // Close the modal when the close button inside the modal is clicked
-        modalCloseBtn.addEventListener("click", () => {
-            modal.style.display = "none";
-        });
-
-
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        modal.style.display = "block";
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            hideSpinner(); // Hide the spinner
+            document.getElementById("modal-message").textContent = "Success!";
+          })
+          .catch((error) => {
+            hideSpinner(); // Hide the spinner
+            document.getElementById("modal-message").textContent =
+              "Error! " + error.message;
+          });
+      });
+      // Close the modal when the close button is clicked
+      closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+      // Close the modal when the close button inside the modal is clicked
+      modalCloseBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
     </script>
-
 
     <!-- reseting form after submitting -->
     <script>
-        document.getElementById('PotatoRawMaterialForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent the default form submission
+      document
+        .getElementById("PotatoRawMaterialForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the default form submission
 
-            this.reset();
-
-
-
+          this.reset();
         });
-
     </script>
     <!-- end of for reseting after submitting -->
 
-
     <script>
-        // Function to show the spinner
-        function showSpinner() {
-            const spinnerContainer = document.querySelector(".spinner-container");
-            spinnerContainer.style.display = "flex";
-            modal.style.display = "none";
-        }
+      // Function to show the spinner
+      function showSpinner() {
+        const spinnerContainer = document.querySelector(".spinner-container");
+        spinnerContainer.style.display = "flex";
+        modal.style.display = "none";
+      }
 
-        // Function to hide the spinner
-        function hideSpinner() {
-            const spinnerContainer = document.querySelector(".spinner-container");
-            spinnerContainer.style.display = "none";
-            modal.style.display = "block";
-        }
+      // Function to hide the spinner
+      function hideSpinner() {
+        const spinnerContainer = document.querySelector(".spinner-container");
+        spinnerContainer.style.display = "none";
+        modal.style.display = "block";
+      }
 
-        // Function to handle form submission
-        function handleSubmit(event) {
-            event.preventDefault();
-            showSpinner(); // Show the spinner
+      // Function to handle form submission
+      function handleSubmit(event) {
+        event.preventDefault();
+        showSpinner(); // Show the spinner
+      }
 
-        }
+      // Add event listener to form submit
 
-        // Add event listener to form submit
-
-        form.addEventListener("submit", handleSubmit);
+      form.addEventListener("submit", handleSubmit);
     </script>
     <!-- End of spinner -->
 
-
-
     <!-- check time validations -->
     <script>
-        // Get the input element
-        // var durationInput = document.getElementById('availability-duration');
-        // durationInput.addEventListener('change', function () {
-        //     durationInput.setCustomValidity('');
-        //     var value = durationInput.value;
-        //     var hours = parseInt(value.split(':')[0]);
-        //     var minutes = parseInt(value.split(':')[1]);
-        //     if (isNaN(hours) || isNaN(minutes) || hours >= 24 || minutes >= 60) {
-        //         durationInput.setCustomValidity('Please enter a valid duration in HH:MM format with hours under 23 and minutes under 60.');
-        //     }
-        // });
+      // Get the input element
+      // var durationInput = document.getElementById('availability-duration');
+      // durationInput.addEventListener('change', function () {
+      //     durationInput.setCustomValidity('');
+      //     var value = durationInput.value;
+      //     var hours = parseInt(value.split(':')[0]);
+      //     var minutes = parseInt(value.split(':')[1]);
+      //     if (isNaN(hours) || isNaN(minutes) || hours >= 24 || minutes >= 60) {
+      //         durationInput.setCustomValidity('Please enter a valid duration in HH:MM format with hours under 23 and minutes under 60.');
+      //     }
+      // });
 
+      // Function to validate the duration input
+      // function validateDurationInput(inputElement) {
+      //     inputElement.addEventListener('change', function () {
+      //         inputElement.setCustomValidity('');
+      //         var value = inputElement.value;
+      //         var hours = parseInt(value.split(':')[0]);
+      //         var minutes = parseInt(value.split(':')[1]);
+      //         if (isNaN(hours) || isNaN(minutes) || hours >= 24 || minutes >= 60) {
+      //             inputElement.setCustomValidity('Please enter a valid duration in HH:MM format with hours under 23 and minutes under 60.');
+      //         }
+      //     });
+      // }
 
-        // Function to validate the duration input
-        // function validateDurationInput(inputElement) {
-        //     inputElement.addEventListener('change', function () {
-        //         inputElement.setCustomValidity('');
-        //         var value = inputElement.value;
-        //         var hours = parseInt(value.split(':')[0]);
-        //         var minutes = parseInt(value.split(':')[1]);
-        //         if (isNaN(hours) || isNaN(minutes) || hours >= 24 || minutes >= 60) {
-        //             inputElement.setCustomValidity('Please enter a valid duration in HH:MM format with hours under 23 and minutes under 60.');
-        //         }
-        //     });
-        // }
+      // // Get the input elements and validate them
+      // var durationInputs = document.querySelectorAll('.time-input');
+      // durationInputs.forEach(function (input) {
+      //     validateDurationInput(input);
+      // });
 
-        // // Get the input elements and validate them
-        // var durationInputs = document.querySelectorAll('.time-input');
-        // durationInputs.forEach(function (input) {
-        //     validateDurationInput(input);
-        // });
+      // Function to validate the duration input
+      function validateDurationInput(inputElement) {
+        inputElement.addEventListener("change", function () {
+          inputElement.setCustomValidity("");
+          var value = inputElement.value;
+          var timeParts = value.split(":");
 
+          // Check if the input is in the format HH:MM or HH
+          if (timeParts.length === 2) {
+            var hours = parseInt(timeParts[0]);
+            var minutes = parseInt(timeParts[1]);
 
+            if (
+              isNaN(hours) ||
+              isNaN(minutes) ||
+              hours > 24 ||
+              (hours === 24 && minutes !== 0) ||
+              minutes >= 60
+            ) {
+              inputElement.setCustomValidity(
+                "Please enter a valid duration in HH:MM format with hours under 24 and minutes under 60."
+              );
+            }
+          } else if (timeParts.length === 1) {
+            var hoursOnly = parseInt(timeParts[0]);
 
-
-
-        // Function to validate the duration input
-        function validateDurationInput(inputElement) {
-            inputElement.addEventListener('change', function () {
-                inputElement.setCustomValidity('');
-                var value = inputElement.value;
-                var timeParts = value.split(':');
-
-                // Check if the input is in the format HH:MM or HH
-                if (timeParts.length === 2) {
-                    var hours = parseInt(timeParts[0]);
-                    var minutes = parseInt(timeParts[1]);
-
-                    if (isNaN(hours) || isNaN(minutes) || hours > 24 || (hours === 24 && minutes !== 0) || minutes >= 60) {
-                        inputElement.setCustomValidity('Please enter a valid duration in HH:MM format with hours under 24 and minutes under 60.');
-                    }
-                } else if (timeParts.length === 1) {
-                    var hoursOnly = parseInt(timeParts[0]);
-
-                    if (isNaN(hoursOnly) || hoursOnly > 24) {
-                        inputElement.setCustomValidity('Please enter a valid duration in HH:MM format with hours under 24.');
-                    }
-                } else {
-                    inputElement.setCustomValidity('Please enter a valid duration in HH:MM format or hours only.');
-                }
-            });
-        }
-
-        // Get the input elements and validate them
-        var durationInputs = document.querySelectorAll('.time-input');
-        durationInputs.forEach(function (input) {
-            validateDurationInput(input);
+            if (isNaN(hoursOnly) || hoursOnly > 24) {
+              inputElement.setCustomValidity(
+                "Please enter a valid duration in HH:MM format with hours under 24."
+              );
+            }
+          } else {
+            inputElement.setCustomValidity(
+              "Please enter a valid duration in HH:MM format or hours only."
+            );
+          }
         });
+      }
 
+      // Get the input elements and validate them
+      var durationInputs = document.querySelectorAll(".time-input");
+      durationInputs.forEach(function (input) {
+        validateDurationInput(input);
+      });
 
+      // auto add colon : between HH and MM
+      document.addEventListener("DOMContentLoaded", function () {
+        const timeInputs = document.querySelectorAll(".time-input");
 
+        timeInputs.forEach(function (inputElement) {
+          inputElement.addEventListener("input", function (event) {
+            const inputValue = event.target.value.trim();
 
-
-
-        // auto add colon : between HH and MM
-        document.addEventListener('DOMContentLoaded', function () {
-            const timeInputs = document.querySelectorAll('.time-input');
-
-            timeInputs.forEach(function (inputElement) {
-                inputElement.addEventListener('input', function (event) {
-                    const inputValue = event.target.value.trim();
-
-                    // Check if the input value has reached 2 characters (HH)
-                    if (inputValue.length === 2 && !inputValue.includes(':')) {
-                        // Add the colon ':' after the HH part
-                        event.target.value = inputValue + ':';
-                    }
-                });
-            });
+            // Check if the input value has reached 2 characters (HH)
+            if (inputValue.length === 3 && !inputValue.includes(":")) {
+              // Add the colon ':' after the HH part
+              event.target.value = inputValue + "-";
+            }
+          });
         });
+      });
     </script>
 
+    <script>
+      function formatVehicleNumber() {
+        const vehicleNoInput = document.getElementById("vehicleNo");
+        const originalValue = vehicleNoInput.value.toUpperCase();
+
+        let formattedValue = "";
+        let lastCharWasDigit = false;
+
+        for (let i = 0; i < originalValue.length; i++) {
+          const char = originalValue.charAt(i);
+
+          if ((char >= "A" && char <= "Z") || (char >= "0" && char <= "9")) {
+            if (
+              i !== 0 &&
+              ((char >= "A" && char <= "Z" && lastCharWasDigit) ||
+                (char >= "0" && char <= "9" && !lastCharWasDigit))
+            ) {
+              formattedValue += "-";
+            }
+            formattedValue += char;
+            lastCharWasDigit = char >= "0" && char <= "9";
+          }
+        }
+
+        vehicleNoInput.value = formattedValue;
+      }
+    </script>
     <!-- Auto update fields -->
     <script>
+      function sumFields(input1Id, input2Id, resultId) {
+        const field1Value =
+          parseFloat(document.getElementById(input1Id).value) || 0;
+        const field2Value =
+          parseFloat(document.getElementById(input2Id).value) || 0;
+        const sum = (field2Value - field1Value).toFixed(2); // Format the result to two digits after the dot
+        document.getElementById(resultId).value = sum;
+        // addTotal();
+        // addTotalGen1();
+        // addTotalGen3();
+      }
 
+      function sumFields3(input1Id, input2Id, resultId) {
+        const field1Value =
+          parseFloat(document.getElementById(input1Id).value) || 0;
+        const field2Value =
+          parseFloat(document.getElementById(input2Id).value) || 0;
+        const sum = (field1Value + field2Value).toFixed(2); // Format the result to two digits after the dot
+        document.getElementById(resultId).value = sum;
+        addTotal();
+      }
 
-        function sumFields(input1Id, input2Id, resultId) {
-            const field1Value = parseFloat(document.getElementById(input1Id).value) || 0;
-            const field2Value = parseFloat(document.getElementById(input2Id).value) || 0;
-            const sum = (field2Value - field1Value).toFixed(2); // Format the result to two digits after the dot
-            document.getElementById(resultId).value = sum;
-            // addTotal();
-            // addTotalGen1();
-            // addTotalGen3();
-        }
+      function addTotal() {
+        const startDayTotal =
+          parseFloat(document.getElementById("wapdatotal").value) || 0;
+        const endDayTotal =
+          parseFloat(document.getElementById("wapdatotalend").value) || 0;
+        totalused = (endDayTotal - startDayTotal).toFixed(2); // Format the result to two digits after the dot
+        document.getElementById("wapdapeakoffpeaktotalused").value = totalused;
+      }
 
-        function sumFields3(input1Id, input2Id, resultId) {
-            const field1Value = parseFloat(document.getElementById(input1Id).value) || 0;
-            const field2Value = parseFloat(document.getElementById(input2Id).value) || 0;
-            const sum = (field1Value + field2Value).toFixed(2); // Format the result to two digits after the dot
-            document.getElementById(resultId).value = sum;
-            addTotal();
-        }
+      // Function to calculate the result and format to two digits after the dot for a group
+      // function calculateResult(groupNumber) {
+      //     const container = document.getElementById(`group${groupNumber}`);
+      //     const input1 = parseFloat(container.querySelector(`#group${groupNumber}_input1`).value) || 0;
+      //     const input2 = parseFloat(container.querySelector(`#group${groupNumber}_input2`).value) || 0;
+      //     const autoValue = parseFloat(container.querySelector(`#group${groupNumber}_input3`).value) || 0;
 
-        function addTotal() {
-            const startDayTotal = parseFloat(document.getElementById('wapdatotal').value) || 0;
-            const endDayTotal = parseFloat(document.getElementById('wapdatotalend').value) || 0;
-            totalused = (endDayTotal - startDayTotal).toFixed(2); // Format the result to two digits after the dot
-            document.getElementById('wapdapeakoffpeaktotalused').value = totalused;
-        }
+      //     // Calculate the result and format it to two digits after the dot
+      //     const result = (input1 - input2 + autoValue).toFixed(2);
 
+      //     container.querySelector(`#group${groupNumber}_result`).value = result;
+      // }
 
-
-
-
-        // Function to calculate the result and format to two digits after the dot for a group
-        // function calculateResult(groupNumber) {
-        //     const container = document.getElementById(`group${groupNumber}`);
-        //     const input1 = parseFloat(container.querySelector(`#group${groupNumber}_input1`).value) || 0;
-        //     const input2 = parseFloat(container.querySelector(`#group${groupNumber}_input2`).value) || 0;
-        //     const autoValue = parseFloat(container.querySelector(`#group${groupNumber}_input3`).value) || 0;
-
-        //     // Calculate the result and format it to two digits after the dot
-        //     const result = (input1 - input2 + autoValue).toFixed(2);
-
-        //     container.querySelector(`#group${groupNumber}_result`).value = result;
-        // }
-
-        // // Loop through each group container and attach the event listener
-        // const groupContainers = document.querySelectorAll('.group-container');
-        // groupContainers.forEach((container, index) => {
-        //     container.querySelectorAll('input[type="number"]').forEach(inputField => {
-        //         inputField.addEventListener('input', () => calculateResult(index + 1));
-        //     });
-        // });
+      // // Loop through each group container and attach the event listener
+      // const groupContainers = document.querySelectorAll('.group-container');
+      // groupContainers.forEach((container, index) => {
+      //     container.querySelectorAll('input[type="number"]').forEach(inputField => {
+      //         inputField.addEventListener('input', () => calculateResult(index + 1));
+      //     });
+      // });
     </script>
-
-
-</body>
-
+  </body>
 </html>
