@@ -25,10 +25,10 @@
           <label for="RSD">Date</label>
           <input
             type="date"
-            required
             id="wapdapeak1"
             name="PotatoRawMaterial Date"
             placeholder="Enter Date"
+            required
           />
         </div>
         <div class="wrapper">
@@ -37,9 +37,9 @@
             type="text"
             id="vehicleNo"
             name="PotatoRawMaterial Vehicle No"
-            required
             placeholder="Enter Vehicle No"
             oninput="formatVehicleNumber()"
+            required
           />
         </div>
       </div>
@@ -137,13 +137,14 @@
         </div>
 
         <div class="wrapper">
-          <label class="label">Gross weight(kg)</label>
+          <label>Gross weight(kg)</label>
           <input
             type="number"
             id="availability-duration"
             name="PotatoRawMaterial Gross weight(kg) of Potatoes"
             placeholder="Enter Gross weight(kg)"
             min="0"
+            required
           />
         </div>
       </div>
@@ -158,6 +159,7 @@
             name="PotatoRawMaterial Grader under Size Potatoes"
             placeholder="Enter Grader under Size"
             min="0"
+            required
           />
         </div>
 
@@ -212,7 +214,6 @@
             required
             placeholder="Enter Fungus"
             min="0"
-            step="0.1"
           />
         </div>
 
@@ -225,7 +226,6 @@
             required
             placeholder="Enter Damage"
             min="0"
-            step="0.1"
           />
         </div>
       </div>
@@ -242,7 +242,6 @@
             name="PotatoRawMaterial Net Weight"
             required
             placeholder="Enter Net Weight(kg)"
-            step="0.1"
           />
         </div>
         <div class="wrapper">
@@ -387,61 +386,6 @@
 
         vehicleNoInput.value = formattedValue;
       }
-    </script>
-
-    <!-- Auto update fields -->
-    <script>
-      function sumFields(input1Id, input2Id, resultId) {
-        const field1Value =
-          parseFloat(document.getElementById(input1Id).value) || 0;
-        const field2Value =
-          parseFloat(document.getElementById(input2Id).value) || 0;
-        const sum = (field2Value - field1Value).toFixed(2); // Format the result to two digits after the dot
-        document.getElementById(resultId).value = sum;
-        // addTotal();
-        // addTotalGen1();
-        // addTotalGen3();
-      }
-
-      function sumFields3(input1Id, input2Id, resultId) {
-        const field1Value =
-          parseFloat(document.getElementById(input1Id).value) || 0;
-        const field2Value =
-          parseFloat(document.getElementById(input2Id).value) || 0;
-        const sum = (field1Value + field2Value).toFixed(2); // Format the result to two digits after the dot
-        document.getElementById(resultId).value = sum;
-        addTotal();
-      }
-
-      function addTotal() {
-        const startDayTotal =
-          parseFloat(document.getElementById("wapdatotal").value) || 0;
-        const endDayTotal =
-          parseFloat(document.getElementById("wapdatotalend").value) || 0;
-        totalused = (endDayTotal - startDayTotal).toFixed(2); // Format the result to two digits after the dot
-        document.getElementById("wapdapeakoffpeaktotalused").value = totalused;
-      }
-
-      // Function to calculate the result and format to two digits after the dot for a group
-      // function calculateResult(groupNumber) {
-      //     const container = document.getElementById(`group${groupNumber}`);
-      //     const input1 = parseFloat(container.querySelector(`#group${groupNumber}_input1`).value) || 0;
-      //     const input2 = parseFloat(container.querySelector(`#group${groupNumber}_input2`).value) || 0;
-      //     const autoValue = parseFloat(container.querySelector(`#group${groupNumber}_input3`).value) || 0;
-
-      //     // Calculate the result and format it to two digits after the dot
-      //     const result = (input1 - input2 + autoValue).toFixed(2);
-
-      //     container.querySelector(`#group${groupNumber}_result`).value = result;
-      // }
-
-      // // Loop through each group container and attach the event listener
-      // const groupContainers = document.querySelectorAll('.group-container');
-      // groupContainers.forEach((container, index) => {
-      //     container.querySelectorAll('input[type="number"]').forEach(inputField => {
-      //         inputField.addEventListener('input', () => calculateResult(index + 1));
-      //     });
-      // });
     </script>
   </body>
 </html>
