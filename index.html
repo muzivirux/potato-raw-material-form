@@ -359,101 +359,7 @@
     </script>
     <!-- End of spinner -->
 
-    <!-- check time validations -->
-    <script>
-      // Get the input element
-      // var durationInput = document.getElementById('availability-duration');
-      // durationInput.addEventListener('change', function () {
-      //     durationInput.setCustomValidity('');
-      //     var value = durationInput.value;
-      //     var hours = parseInt(value.split(':')[0]);
-      //     var minutes = parseInt(value.split(':')[1]);
-      //     if (isNaN(hours) || isNaN(minutes) || hours >= 24 || minutes >= 60) {
-      //         durationInput.setCustomValidity('Please enter a valid duration in HH:MM format with hours under 23 and minutes under 60.');
-      //     }
-      // });
-
-      // Function to validate the duration input
-      // function validateDurationInput(inputElement) {
-      //     inputElement.addEventListener('change', function () {
-      //         inputElement.setCustomValidity('');
-      //         var value = inputElement.value;
-      //         var hours = parseInt(value.split(':')[0]);
-      //         var minutes = parseInt(value.split(':')[1]);
-      //         if (isNaN(hours) || isNaN(minutes) || hours >= 24 || minutes >= 60) {
-      //             inputElement.setCustomValidity('Please enter a valid duration in HH:MM format with hours under 23 and minutes under 60.');
-      //         }
-      //     });
-      // }
-
-      // // Get the input elements and validate them
-      // var durationInputs = document.querySelectorAll('.time-input');
-      // durationInputs.forEach(function (input) {
-      //     validateDurationInput(input);
-      // });
-
-      // Function to validate the duration input
-      function validateDurationInput(inputElement) {
-        inputElement.addEventListener("change", function () {
-          inputElement.setCustomValidity("");
-          var value = inputElement.value;
-          var timeParts = value.split(":");
-
-          // Check if the input is in the format HH:MM or HH
-          if (timeParts.length === 2) {
-            var hours = parseInt(timeParts[0]);
-            var minutes = parseInt(timeParts[1]);
-
-            if (
-              isNaN(hours) ||
-              isNaN(minutes) ||
-              hours > 24 ||
-              (hours === 24 && minutes !== 0) ||
-              minutes >= 60
-            ) {
-              inputElement.setCustomValidity(
-                "Please enter a valid duration in HH:MM format with hours under 24 and minutes under 60."
-              );
-            }
-          } else if (timeParts.length === 1) {
-            var hoursOnly = parseInt(timeParts[0]);
-
-            if (isNaN(hoursOnly) || hoursOnly > 24) {
-              inputElement.setCustomValidity(
-                "Please enter a valid duration in HH:MM format with hours under 24."
-              );
-            }
-          } else {
-            inputElement.setCustomValidity(
-              "Please enter a valid duration in HH:MM format or hours only."
-            );
-          }
-        });
-      }
-
-      // Get the input elements and validate them
-      var durationInputs = document.querySelectorAll(".time-input");
-      durationInputs.forEach(function (input) {
-        validateDurationInput(input);
-      });
-
-      // auto add colon : between HH and MM
-      document.addEventListener("DOMContentLoaded", function () {
-        const timeInputs = document.querySelectorAll(".time-input");
-
-        timeInputs.forEach(function (inputElement) {
-          inputElement.addEventListener("input", function (event) {
-            const inputValue = event.target.value.trim();
-
-            // Check if the input value has reached 2 characters (HH)
-            if (inputValue.length === 3 && !inputValue.includes(":")) {
-              // Add the colon ':' after the HH part
-              event.target.value = inputValue + "-";
-            }
-          });
-        });
-      });
-    </script>
+    <!-- Vehicle No Formating -->
 
     <script>
       function formatVehicleNumber() {
@@ -482,6 +388,7 @@
         vehicleNoInput.value = formattedValue;
       }
     </script>
+
     <!-- Auto update fields -->
     <script>
       function sumFields(input1Id, input2Id, resultId) {
